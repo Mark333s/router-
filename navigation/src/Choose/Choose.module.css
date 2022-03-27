@@ -1,0 +1,22 @@
+.frm{
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    
+   
+}
+
+.f{
+    
+    width: 20%;
+    margin: 2%;
+}
+
+.s{
+width: 20%;
+}
+
+.b{
+    width: 20%;
+}
