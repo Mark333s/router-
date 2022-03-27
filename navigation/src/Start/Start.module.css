@@ -7,7 +7,7 @@
   display: flex;
   justify-content: flex-end;
 }
-.spn{
+.inp{
     display: flex;
     margin-right: 5%;
     justify-content: center;
@@ -27,12 +27,6 @@
 .btn_f{
     margin: 5%;
   
-
-}
-
-
-.triangle{
-  margin-right: 5%;
 
 }
 

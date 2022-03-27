@@ -1,11 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import s from './Start.module.css'
 import { Route, Routes , Link } from "react-router-dom";
 import Choose from "../Choose/Choose";
 import Button from "./Button";
+import Select from 'react-select';
 
+
+
+const options = [
+    {
+      value: 'Ukrainian',
+      label: 'UA'
+
+    },
+    {
+        value: 'English',
+        label: 'EN'
+  
+      },{
+        value: 'Polish',
+        label: 'PL'
+  
+      },
+]
 
 const Start = () =>{
+
+   const [currentLanguage , setCurrentLanguage] = useState('UA')
+
+   const getValue = ()=>{
+       return currentLanguage ? options.find(l => l.value === currentLanguage) : ''
+   }
+
+   const onChange = (newValue)=>{
+   setCurrentLanguage(newValue.value)
+   }
+
     return(
         <div>
     <div className={s.form}>
@@ -14,10 +44,13 @@ const Start = () =>{
         <p className={s.logo}>Logo</p>
 
 <div className={s.input_container}>
-    <span className={s.spn}>
-        UA
-        </span>
-        <button className={s.triangle}>s</button>
+    <h2 className={s.selector}></h2>
+    <Select  
+    onChange={onChange}
+    value={getValue()} 
+    className={s.inp}  
+    options={options}/>
+        
 </div>
 
  </div>
